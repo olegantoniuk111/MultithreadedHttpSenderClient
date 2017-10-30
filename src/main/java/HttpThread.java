@@ -31,7 +31,7 @@ public class HttpThread implements Callable<Boolean> {
             try{
                 response = client.execute(httpGet, httpClientContext);
                 LocalTime time = LocalTime.now();
-                System.out.println(time);
+                System.out.println("Response code: "+ response.getStatusLine().getStatusCode()+"sending time: " + time);
             }catch (Exception e){
                 e.printStackTrace();
                 return false;
