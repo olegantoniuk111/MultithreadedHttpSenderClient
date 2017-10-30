@@ -9,23 +9,28 @@ public class PropertiesReader {
     private static Properties properties = new Properties();
 
 
-    public static String getPropertiesByKey (String key) throws FileNotFoundException {
+    public static String getPropertiesByKey (String key) throws NoSuchPropertieInPropertiesFileException  {
         try {
             in = new FileInputStream("src/main/resources/application.properties");
         } catch (FileNotFoundException e) {
-            System.out.println("file application.properties not found");
             e.printStackTrace();
+            System.out.println("file application.properties not found");
+            System.exit(0);
         }
         try {
             properties.load(in);
         } catch (IOException e) {
-            System.out.println("Exeption during loading properties from file");
             e.printStackTrace();
+            System.out.println("Exeption during reading data from InputStream");
         }
+
         String propertiesValue = properties.getProperty(key);
-
-        return propertiesValue;
-
+        if (propertiesValue == null) {
+            RuntimeException exception = new NoSuchPropertieInPropertiesFileException(key);
+            throw exception;
+        }else {
+            return propertiesValue;
+        }
     }
 
 }
