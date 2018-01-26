@@ -34,7 +34,7 @@ public class SenderService {
     public void sendRequests(String host, int requestQuantity)  {
 
         manager.setDefaultMaxPerRoute(requestQuantity);
-        manager.setMaxTotal(requestQuantity);
+        manager.setMaxTotal(20);
         executor = Executors.newFixedThreadPool(getThreadsQuantity());
         List<Callable<Boolean>> httpThreads =  generateRequestTasks(requestQuantity, host);
         try {
@@ -45,7 +45,6 @@ public class SenderService {
         }
         executor.shutdown();
         manager.shutdown();
-
 
     }
 

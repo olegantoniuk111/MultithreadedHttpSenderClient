@@ -36,6 +36,7 @@ public class RequestTask implements Callable<Boolean> {
 
 
     public Boolean call()  {
+        System.out.println("request №"+ this.threadNumber +"send");
         try {
             long start = System.currentTimeMillis();
             if(startTime.get() == 0){
@@ -57,7 +58,10 @@ public class RequestTask implements Callable<Boolean> {
             e.printStackTrace();
             System.out.println("exception occur during releasing response resources request № " + this.threadNumber);
             return false;
+        }finally {
+            System.out.println("response №"+ this.threadNumber +"returned");
         }
         return true;
+
     }
 }
