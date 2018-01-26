@@ -33,7 +33,7 @@ public class SenderService {
 
     public void sendRequests(String host, int requestQuantity)  {
 
-        manager.setDefaultMaxPerRoute(requestQuantity);
+        manager.setDefaultMaxPerRoute(4);  //quantity of connections per route
         manager.setMaxTotal(20);
         executor = Executors.newFixedThreadPool(getThreadsQuantity());
         List<Callable<Boolean>> httpThreads =  generateRequestTasks(requestQuantity, host);
