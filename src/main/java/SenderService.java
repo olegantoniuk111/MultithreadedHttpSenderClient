@@ -3,17 +3,18 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.impl.client.CloseableHttpClient;
 import org.apache.http.impl.client.HttpClients;
 import org.apache.http.impl.conn.PoolingHttpClientConnectionManager;
+
+import java.util.ArrayDeque;
 import java.util.LinkedList;
 import java.util.List;
-import java.util.concurrent.Callable;
-import java.util.concurrent.ExecutorService;
-import java.util.concurrent.Executors;
+import java.util.concurrent.*;
 import java.util.concurrent.atomic.AtomicLong;
 
 
 public class SenderService {
     private PoolingHttpClientConnectionManager manager = new PoolingHttpClientConnectionManager();
     private ExecutorService executor;
+    private ScheduledExecutorService scheduledExecutorService;
     private CloseableHttpClient client = HttpClients
             .custom().setConnectionManager(manager).build();
     public static AtomicLong startTime = new AtomicLong();
@@ -27,12 +28,10 @@ public class SenderService {
             System.out.println("Propertie with name " +e.getMessage()+ " not exist. Check application.properties file");
             System.exit(0);
         }
-
         return Integer.valueOf(threadsQuantityForExecutorService);
     }
 
     public void sendRequests(String host, int requestQuantity)  {
-
         manager.setDefaultMaxPerRoute(4);  //quantity of connections per route
         manager.setMaxTotal(20);
         executor = Executors.newFixedThreadPool(getThreadsQuantity());
@@ -45,37 +44,38 @@ public class SenderService {
         }
         executor.shutdown();
         manager.shutdown();
+    }
+
+    public void sendRequestsScheduledByTime(String host, int requestQuantity, int interval) {
+        manager.setDefaultMaxPerRoute(1);
+        scheduledExecutorService = Executors.newScheduledThreadPool(requestQuantity);
+        List<ScheduledFuture<Boolean>> results = new LinkedList<ScheduledFuture<Boolean>>();
+        List<Callable<Boolean>> httpThreads =  generateRequestTasks(requestQuantity, host);
+
+        for(Callable<Boolean> callable : httpThreads){
+            ScheduledFuture<Boolean> futureTask = scheduledExecutorService.schedule(callable,interval, TimeUnit.MICROSECONDS);
+            results.add(futureTask);
+            try {
+                scheduledExecutorService.awaitTermination(interval, TimeUnit.MILLISECONDS);
+            } catch (InterruptedException e) {
+                e.printStackTrace();
+            }
+        }
+            scheduledExecutorService.shutdownNow();
+            manager.shutdown();
+
 
     }
 
     private List<Callable<Boolean>> generateRequestTasks(int threadsCount, String hostName){
         List<Callable<Boolean>> tasks = new LinkedList<Callable<Boolean>>();
 
-        for (int i = 0; i <= threadsCount; i++){
+        for (int i = 1; i <= threadsCount; i++){
             HttpGet get = new HttpGet(hostName);
             tasks.add(new RequestTask(get, client, i));
         }
         return tasks;
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }

@@ -4,6 +4,7 @@ import org.apache.http.client.methods.HttpGet;
 import org.apache.http.client.protocol.HttpClientContext;
 import org.apache.http.impl.client.CloseableHttpClient;
 import java.io.IOException;
+import java.time.LocalTime;
 import java.util.concurrent.Callable;
 import java.util.concurrent.atomic.AtomicLong;
 
@@ -36,13 +37,16 @@ public class RequestTask implements Callable<Boolean> {
 
 
     public Boolean call()  {
-        System.out.println("request №"+ this.threadNumber +"send");
+
         try {
             long start = System.currentTimeMillis();
             if(startTime.get() == 0){
                 setStartTime(start);
             }
-                response = client.execute(httpGet, httpClientContext);
+
+            response = client.execute(httpGet, httpClientContext);
+            LocalTime time = LocalTime.now();
+            System.out.println("request №"+ this.threadNumber +"send at " + time);
             long end = System.currentTimeMillis();
             setEndTime(end);
 
