@@ -49,20 +49,31 @@ public class SenderService {
     public void sendRequestsScheduledByTime(String host, int requestQuantity, int interval) {
         manager.setDefaultMaxPerRoute(1);
         scheduledExecutorService = Executors.newScheduledThreadPool(requestQuantity);
-        List<ScheduledFuture<Boolean>> results = new LinkedList<ScheduledFuture<Boolean>>();
-        List<Callable<Boolean>> httpThreads =  generateRequestTasks(requestQuantity, host);
 
+        List<Callable<Boolean>> httpThreads =  generateRequestTasks(requestQuantity, host);
+        List<ScheduledFuture<Boolean>> results = new LinkedList<ScheduledFuture<Boolean>>();
+        System.out.println(results.size());
         for(Callable<Boolean> callable : httpThreads){
             ScheduledFuture<Boolean> futureTask = scheduledExecutorService.schedule(callable,interval, TimeUnit.MICROSECONDS);
-            results.add(futureTask);
             try {
                 scheduledExecutorService.awaitTermination(interval, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
                 e.printStackTrace();
             }
         }
-            scheduledExecutorService.shutdownNow();
+        try{
+            scheduledExecutorService.shutdown();
+            scheduledExecutorService.awaitTermination(5, TimeUnit.SECONDS);
+        } catch (InterruptedException e) {
+            System.out.println("Tasks interrupted");
+        }finally {
+            if(!scheduledExecutorService.isTerminated()){
+                System.out.println("Cancelling not finished tasks");
+                scheduledExecutorService.shutdownNow();
+            }
             manager.shutdown();
+        }
+
 
 
     }

@@ -2,10 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="062ffea3-3d06-41c7-afa3-595f7725aeaf" name="Default" comment="">
-      <change beforePath="" afterPath="$PROJECT_DIR$/src/main/java/ScheduledSenderService.java" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/Main.java" afterPath="$PROJECT_DIR$/src/main/java/Main.java" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/RequestTask.java" afterPath="$PROJECT_DIR$/src/main/java/RequestTask.java" />
       <change beforePath="$PROJECT_DIR$/src/main/java/SenderService.java" afterPath="$PROJECT_DIR$/src/main/java/SenderService.java" />
       <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" afterPath="$PROJECT_DIR$/src/main/resources/application.properties" />
     </list>
@@ -23,7 +20,7 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="application.properties" pinned="false" current-in-tab="false">
+      <file leaf-file-name="application.properties" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/src/main/resources/application.properties">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="18">
@@ -36,21 +33,23 @@
       <file leaf-file-name="SenderService.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/SenderService.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="63" column="50" lean-forward="false" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+            <state relative-caret-position="278">
+              <caret line="73" column="31" lean-forward="false" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
               <folding>
                 <element signature="method#getThreadsQuantity#0;class#SenderService#0" expanded="false" />
                 <element signature="method#sendRequests#0;class#SenderService#0" expanded="false" />
+                <element signature="e#2367#2393#0" expanded="true" />
+                <element signature="e#3490#3509#0" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Main.java" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Main.java" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="162">
-              <caret line="18" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
+            <state relative-caret-position="324">
+              <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
               <folding>
                 <element signature="imports" expanded="true" />
               </folding>
@@ -96,9 +95,9 @@
         <option value="$PROJECT_DIR$/.gitignore" />
         <option value="$PROJECT_DIR$/src/main/java/RequesttaskByTimer.java" />
         <option value="$PROJECT_DIR$/src/main/java/ScheduledRequestTask.java" />
-        <option value="$PROJECT_DIR$/src/main/java/ScheduledSenderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/RequestTask.java" />
         <option value="$PROJECT_DIR$/src/main/java/Main.java" />
+        <option value="$PROJECT_DIR$/src/main/java/ScheduledSenderService.java" />
         <option value="$PROJECT_DIR$/src/main/java/SenderService.java" />
         <option value="$PROJECT_DIR$/src/main/resources/application.properties" />
       </list>
@@ -163,6 +162,9 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
+      <pane id="Scratches" />
+      <pane id="PackagesPane" />
+      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -199,10 +201,7 @@
           <select />
         </subPane>
       </pane>
-      <pane id="PackagesPane" />
-      <pane id="Scratches" />
       <pane id="AndroidView" />
-      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -708,12 +707,15 @@
       <workItem from="1517088991882" duration="1786000" />
       <workItem from="1517090827499" duration="1777000" />
       <workItem from="1517092672323" duration="1777000" />
-      <workItem from="1517094654797" duration="1047000" />
+      <workItem from="1517094654797" duration="1776000" />
+      <workItem from="1517096490281" duration="835000" />
+      <workItem from="1517127976457" duration="1681000" />
+      <workItem from="1517129748662" duration="409000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="86846000" />
+    <option name="totallyTimeSpent" value="90500000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="64" y="23" width="1303" height="780" extended-state="6" />
@@ -728,7 +730,7 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4114114" sideWeight="0.5057648" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Maven Projects" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.35285285" sideWeight="0.49423522" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.4249249" sideWeight="0.49423522" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3153153" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Capture Tool" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Designer" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
@@ -785,6 +787,8 @@
           <folding>
             <element signature="method#getThreadsQuantity#0;class#SenderService#0" expanded="false" />
             <element signature="method#sendRequests#0;class#SenderService#0" expanded="false" />
+            <element signature="e#2367#2393#0" expanded="true" />
+            <element signature="e#3490#3509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -813,6 +817,8 @@
           <folding>
             <element signature="method#getThreadsQuantity#0;class#SenderService#0" expanded="false" />
             <element signature="method#sendRequests#0;class#SenderService#0" expanded="false" />
+            <element signature="e#2367#2393#0" expanded="true" />
+            <element signature="e#3490#3509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -858,6 +864,8 @@
           <folding>
             <element signature="method#getThreadsQuantity#0;class#SenderService#0" expanded="false" />
             <element signature="method#sendRequests#0;class#SenderService#0" expanded="false" />
+            <element signature="e#2367#2393#0" expanded="true" />
+            <element signature="e#3490#3509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -894,6 +902,8 @@
           <folding>
             <element signature="method#getThreadsQuantity#0;class#SenderService#0" expanded="false" />
             <element signature="method#sendRequests#0;class#SenderService#0" expanded="false" />
+            <element signature="e#2367#2393#0" expanded="true" />
+            <element signature="e#3490#3509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1004,14 +1014,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/ScheduledSenderService.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="160">
-          <caret line="47" column="89" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="78" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="jar:///usr/lib/jvm/java-8-oracle/src.zip!/java/util/TimerTask.java">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="213">
@@ -1050,13 +1052,33 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="20" column="5" lean-forward="false" selection-start-line="20" selection-start-column="5" selection-end-line="20" selection-end-column="5" />
+          <folding>
+            <element signature="imports" expanded="true" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/src/main/java/ScheduledSenderService.java">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="43" column="7" lean-forward="true" selection-start-line="43" selection-start-column="7" selection-end-line="43" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/src/main/java/SenderService.java">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="63" column="50" lean-forward="false" selection-start-line="63" selection-start-column="50" selection-end-line="63" selection-end-column="50" />
+        <state relative-caret-position="278">
+          <caret line="73" column="31" lean-forward="false" selection-start-line="73" selection-start-column="31" selection-end-line="73" selection-end-column="31" />
           <folding>
             <element signature="method#getThreadsQuantity#0;class#SenderService#0" expanded="false" />
             <element signature="method#sendRequests#0;class#SenderService#0" expanded="false" />
+            <element signature="e#2367#2393#0" expanded="true" />
+            <element signature="e#3490#3509#0" expanded="true" />
           </folding>
         </state>
       </provider>
@@ -1066,16 +1088,6 @@
         <state relative-caret-position="18">
           <caret line="1" column="20" lean-forward="false" selection-start-line="1" selection-start-column="20" selection-end-line="1" selection-end-column="20" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/src/main/java/Main.java">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="162">
-          <caret line="18" column="8" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-          <folding>
-            <element signature="imports" expanded="true" />
-          </folding>
         </state>
       </provider>
     </entry>
