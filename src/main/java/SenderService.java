@@ -51,10 +51,9 @@ public class SenderService {
         scheduledExecutorService = Executors.newScheduledThreadPool(requestQuantity);
 
         List<Callable<Boolean>> httpThreads =  generateRequestTasks(requestQuantity, host);
-        List<ScheduledFuture<Boolean>> results = new LinkedList<ScheduledFuture<Boolean>>();
-        System.out.println(results.size());
+
         for(Callable<Boolean> callable : httpThreads){
-            ScheduledFuture<Boolean> futureTask = scheduledExecutorService.schedule(callable,interval, TimeUnit.MICROSECONDS);
+            scheduledExecutorService.schedule(callable,interval, TimeUnit.MICROSECONDS);
             try {
                 scheduledExecutorService.awaitTermination(interval, TimeUnit.MILLISECONDS);
             } catch (InterruptedException e) {
@@ -73,9 +72,6 @@ public class SenderService {
             }
             manager.shutdown();
         }
-
-
-
     }
 
     private List<Callable<Boolean>> generateRequestTasks(int threadsCount, String hostName){
@@ -87,6 +83,4 @@ public class SenderService {
         }
         return tasks;
     }
-
-
 }

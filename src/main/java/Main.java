@@ -9,11 +9,13 @@ public class Main {
 
         String host = PropertiesReader.getPropertiesByKey("host");
         System.out.println("host: " + host);
+
         String quantity = PropertiesReader.getPropertiesByKey("requestQuantity");
         int requestquantity = Integer.valueOf(quantity);
         System.out.println("requestAmountInPropFile: " + requestquantity);
+
         Integer interval = calcIntervalForExecution();
-        System.out.println("interval betwen sending requests: "+interval);
+        System.out.println("interval betwen sending requests: ~ "+interval + "milliseconds");
 
         SenderService senderService = new SenderService();
         senderService.sendRequestsScheduledByTime(host,requestquantity,interval);
